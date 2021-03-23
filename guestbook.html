@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guestbook</title>
+</head>
+
+<style>
+    body{
+        background-color: aquamarine;
+    }
+    h2{
+        text-align: center;
+        color: red;
+        font-weight: 600;
+    }
+    form{
+        border: 1px solid blue;
+    }
+</style>
+
+<body>
+    <h2 for="welcome">Welcome to my guestbook!</h2>
+
+    <form action="/" method="POST">
+        <div>
+            <textarea id="name" name="name" rows="1" cols="50" placeholder="Leave your name here"></textarea>
+        </div>
+        <div>
+            <textarea id="body" name="body" rows="20" cols="50" placeholder="Leave your note here"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="save">
+        </div>
+    </form>
+    <hr />
+    {{range .notes}}
+    <div>
+        <h2>{{.Name}}</h2>
+        <p>{{.Body}}</p>
+        <p>{{.Time}}</p>
+        <a href="/?action=delete&id={{.ID.Hex}}">REMOVE</a>
+    </div>
+    {{end}}
+    <hr />
+</body>
+
+</html>
