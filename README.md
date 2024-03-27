@@ -1,2 +1,2 @@
 # Guestbook
-Guestbook developed in golang + MongoDB + HTML + CSS
+Guestbook developed in Golang + MongoDB + HTML + CSS
